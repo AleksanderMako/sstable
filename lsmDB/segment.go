@@ -111,7 +111,7 @@ func (s *Segment) SearchPriorityQueue(key string) types.Node {
 	}
 
 	l := 0
-	r := len(*s.priorityQueue)
+	r := len(*s.priorityQueue) - 1
 
 	for l <= r {
 		mid := l + (r-l)/2
@@ -128,11 +128,11 @@ func (s *Segment) SearchPriorityQueue(key string) types.Node {
 	return types.Node{}
 }
 
-// SearchIndex serches the in momory map for a closer offest to the given key
+// SearchIndex searches the in memory map for a closer offest to the given key
 // and then searches the segment file from the offest found in the map
 func (s *Segment) SearchIndex(key string) (val string, found bool) {
 
-	// TODO: implement an order map version
+	// TODO: implement an ordered map version
 
 	file, err := s.OpenFileinReadOnly()
 	if err != nil {
