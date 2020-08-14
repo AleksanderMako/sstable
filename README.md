@@ -1,2 +1,2 @@
 # sstable
-Sorted String Tale implementation in Go
+Sorted String Table implementation in Go
